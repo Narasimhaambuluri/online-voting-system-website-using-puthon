@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Student Registration</title>
+  </head>
+  <body>
+    <header>
+      <h1>Online Voting</h1>
+    </header>
+    <div class="wrapper">
+      <h1 style="text-align: center; position: absolute; top: 165px; left: 40%">
+        Student Registration
+      </h1>
+      <div class="std-reg-wrapper">
+        <form action="/register" method="post">
+          <div class="fields">
+            <label for="roll_no">Enter Your Roll No.</label>
+            <input type="text" id="roll_no" name="roll_no" required />
+          </div>
+          <div class="fields">
+            <label for="student_id">Enter Your ID</label>
+            <input type="text" id="student_id" name="student_id" required />
+          </div>
+          <div class="fields">
+            <label for="password">Enter Your Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <input type="submit" class="submit" value="Register" />
+          <p>
+            Already have an acccount?<a href="{{url_for('login')}}">Login</a>
+          </p>
+          {% with messages = get_flashed_messages() %} {% if messages %}
+          <div class="alert" style="color: red">{{ messages[0] }}</div>
+          {% endif %} {% endwith %}
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

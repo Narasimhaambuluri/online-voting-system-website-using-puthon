@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vote for Your Candidate</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Online Voting</h1>
+    </header>
+    <div class="wrapper-2">
+      <h1
+        style="
+          text-align: center;
+          position: absolute;
+          top: 193px;
+          left: 39%;
+          color: #fc0376;
+        "
+      >
+        Vote For Your Candidate
+      </h1>
+      <div class="vote-wrapper">
+        <form action="/vote" method="post" style="padding: 60px">
+          <div class="candidates">
+            {% for candidate in candidates %}
+            <div class="candidate">
+              <input
+                type="radio"
+                id="candidate_{{ candidate.id }}"
+                name="candidate_id"
+                value="{{ candidate.id }}"
+                required
+              />
+              <label for="candidate_{{ candidate.id }}"
+                >{{ candidate.name }}</label
+              >
+            </div>
+            {% endfor %}
+          </div>
+          <input type="submit" value="Submit Vote" id="vote-submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

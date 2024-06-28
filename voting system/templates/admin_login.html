@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Admin Login</title>
+  </head>
+  <body>
+    <header>
+      <h1>Online Voting</h1>
+    </header>
+    <div class="wrapper">
+      <h1 style="text-align: center; position: absolute; top: 213px; left: 44%">
+        Admin Login
+      </h1>
+      <div class="std-reg-wrapper">
+        <form action="/admin_login" method="post">
+          <div class="fields">
+            <label for="admin_id">Enter Your ID</label>
+            <input type="text" id="admin_id" name="admin_id" required />
+          </div>
+          <div class="fields">
+            <label for="password">Enter Your Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <input type="submit" class="submit" value="Login" />
+          {% with messages = get_flashed_messages() %} {% if messages %}
+          <div class="alert" style="color: red">{{ messages[0] }}</div>
+          {% endif %} {% endwith %}
+          <p>
+            You are a student?
+            <a href="/login">Login here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  padding: 20px;
+  background-color: antiquewhite;
+}
+header h1 {
+  text-align: center;
+}
+body {
+  /* background-color: lightgray; */
+  position: relative;
+}
+.std-reg-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+  background-color: white;
+  box-shadow: -1px 2px 10px;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fields input {
+  padding: 10px 20px;
+  width: 300px;
+}
+.submit {
+  padding: 10px 20px;
+  align-self: flex-end;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.vote-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.candidates {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+.candidates input {
+  cursor: pointer;
+}
+#vote-submit {
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: white;
+  background-color: blue;
+  border: none;
+  cursor: pointer;
+}
+.results-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.results-wrapper table th,
+td {
+  padding: 10px 90px;
+  text-align: center;
+  background-color: white;
+}
+.wrapper {
+  background-image: url("../static/images/IMG-20240624-WA0002.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapper-2 {
+  background-image: url("../static/images/vote.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.warpper-3 {
+  height: 100vh;
+  background-color: lightgray;
+  position: relative;
+}

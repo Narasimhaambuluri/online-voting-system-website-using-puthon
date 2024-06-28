@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Election Results</title>
+  </head>
+  <body>
+    <header>
+      <h1>Election Results</h1>
+    </header>
+    <div class="results-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate Name</th>
+            <th>Vote Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for candidate in results %}
+          <tr>
+            <td>{{ candidate.name }}</td>
+            <td>{{ candidate.vote_count }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p style="padding: 10px 20px; background-color: red; width: fit-content">
+      <a
+        style="text-decoration: none; color: black"
+        href="{{ url_for('admin_logout') }}"
+        >Logout</a
+      >
+    </p>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Already Voted</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Online Voting</h1>
+    </header>
+    <div class="warpper-3">
+      <h1 style="text-align: center; padding: 10px">Already Voted</h1>
+      <div class="message-wrapper">
+        <p style="text-align: center; margin-top: 20px; font-size: 22px">
+          You have already cast your vote. Please go back to the
+          <a href="{{ url_for('admin_logout') }}">login page</a>.
+        </p>
+      </div>
+      <img
+        src="../static/images/thanks-for-voting.jpg"
+        alt=""
+        style="width: 400px; position: absolute; left: 38%; top: 130px"
+      />
+    </div>
+  </body>
+</html>
